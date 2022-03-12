@@ -7,6 +7,8 @@ module Users
 
     attr_reader :service, :user
 
+    has_many :task_activities
+
     def facebook
       handle_auth 'Facebook'
     end

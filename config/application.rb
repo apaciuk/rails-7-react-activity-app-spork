@@ -7,6 +7,8 @@ require_relative 'boot'
 
 require 'rails/all'
 
+require 'logger'
+
 Bundler.require(*Rails.groups)
 
 module TaskActivity
