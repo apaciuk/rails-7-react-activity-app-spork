@@ -1,0 +1,16 @@
+<div class="row mt-4 mb-4">
+<p style="color: green"><%= notice %></p>
+
+<h1 class="mb-4">Task Activities</h1>
+
+<div id="task_activities">
+  <% @task_activities.each do |task_activity| %>
+    <%= render task_activity %>
+    <p>
+      <%= link_to "Show this Task", task_activity, class:"btn btn-success btn-sm" %>
+    </p>
+  <% end %>
+</div>
+</div>
+
+<%= link_to "New Task Activity", new_task_activity_path, class: "btn btn-warning btn-lg mb-4" %>
