@@ -1,6 +1,6 @@
 class TaskActivitiesController < ApplicationController
-  before_action :set_task_activity, only: %i[ show edit update destroy ]
-
+  before_action :set_task_activity, only: %i[show edit update destroy]
+  require 'logger'
   # GET /task_activities or /task_activities.json
   def index
     @task_activities = TaskActivity.all
@@ -43,10 +43,14 @@ class TaskActivitiesController < ApplicationController
       end
     end
   end
-
+  logger = Logger.new('log/dev2')
+  logger.debug('Created logger')
+  logger.info('Program started')
   # DELETE /task_activities/1 or /task_activities/1.json
   def destroy
+
     @task_activity.destroy
+    logger.debug(@task_activity.destroy)
 
     respond_to do |format|
       format.html { redirect_to task_activities_url, notice: 'Task activity was successfully destroyed.' }
